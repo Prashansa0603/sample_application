@@ -1,0 +1,40 @@
+﻿@model WebApplication2.Models.tblProduct
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add a new Product</h2>
+
+@using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{ 
+   <table class="table">
+    <tr>
+        <td> Enter Product Name: </td>
+        <td>@Html.EditorFor(Model => Model.Product_name, new { htmlAttributes = new { @class = "form-control" } }) </td>
+    </tr>
+    <tr>
+        <td> Enter Product Price: </td>
+        <td>@Html.EditorFor(Model => Model.Product_price, new { htmlAttributes = new { @class = "form-control" } }) </td>
+    </tr>
+    <tr>
+        <td> Enter Product Quantity: </td>
+        <td>@Html.EditorFor(Model => Model.Product_qty, new { htmlAttributes = new { @class = "form-control" } }) </td>
+    </tr>
+    <tr>
+        <td> Enter Category Id: </td>
+        <td> @Html.EditorFor(Model => Model.CategoryId, new { htmlAttributes = new { @class = "form-control" } }) </td>
+
+    </tr>
+    <tr>
+        <td> Enter Category Name: </td>
+        <td> @Html.EditorFor(Model => Model.CategoryName, new { htmlAttributes = new { @class = "form-control" } }) </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button style="background-color:aqua">Add Product</button>
+           
+         </td>
+    </tr>
+
+</table>
+}

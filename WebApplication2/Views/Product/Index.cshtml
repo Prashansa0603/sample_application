@@ -1,0 +1,36 @@
+﻿@model List<WebApplication2.Models.tblProduct>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of all Products </h2>
+<table class=" =table table-bordered table-striped table-hover">
+
+    <tr>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Product Qty </th>
+        <th>Category Id</th>
+        <th>Category Name</th>
+        <th>Edit</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Product_Id</td>
+            <td>@item.Product_name</td>
+            <td>@item.Product_price</td>
+            <td>@item.Product_qty</td>
+            <td>@item.CategoryId</td>
+            <td>@item.CategoryName</td>
+            <td>
+                <a href="@Url.Action("Edit","Product", new { @id = item.Product_Id })" class="btn btn-warning"> Edit </a>
+                <a href="@Url.Action("delete","Product", new { @id = item.Product_Id })" class="btn btn-danger" onclick="return confirm(" are you sure delete @item.Product_name ?")"> Delete </a>
+            </td>
+        </tr>
+
+    }
+</table>
+<a href="@Url.Action("Create","Product")" class="btn btn-primary"> Add a New Product </a>

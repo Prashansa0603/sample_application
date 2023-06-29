@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProductdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblProduct">
+    <Key>
+      <PropertyRef Name="Product_Id" />
+    </Key>
+    <Property Name="Product_Id" Type="Int32" Nullable="false" />
+    <Property Name="Product_name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Product_price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Product_qty" Type="Int32" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="ProductdbEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblProducts" EntityType="Self.tblProduct" />
+  </EntityContainer>
+</Schema>
